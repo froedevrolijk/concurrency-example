@@ -1,4 +1,5 @@
-# concurrency-example
+# Concurrency example
+This project demonstrates how to use concurrency with Go. It also shows how to deploy the project to Cloud Run.
 
 ### Prerequisites
 * Go
@@ -15,7 +16,7 @@
 * `docker logs coffee-shop` to see the output
 * `make stop` to stop container and remove image  
 
-## Deploy to Cloud Run on GCP
+### Deploy to Cloud Run
 Create a GCP project and create your project configuration using:  
 `gcloud config configurations create [CONFIGURATION_NAME]`
 
@@ -25,10 +26,13 @@ Check if the configuration is activated:
 Allow the SDK to find credentials automatically:  
 `gcloud auth application-default login`
 
-Enable Cloud Run API:  
+Enable the Cloud Run API:  
 `gcloud services enable run.googleapis.com`
 
-Deploy the code from source. From folder root run (and accept defaults):  
+Set a default region for Cloud Run:  
+`gcloud config set run/region europe-west1`  
+
+Deploy the code. From folder root run (and accept defaults):  
 `gcloud run deploy`
 
 Navigate to the Cloud Run address in a web browser, e.g.:  
